@@ -5,8 +5,12 @@ Created on Fri Aug 26 19:39:12 2016
 @author: YeYipeng
 """
 
-######################程序正文######################
-def network_indicator(edges,ODs):
+####该函数用于确定有向图中路段-路径关系以及路径-OD关系
+####ODs是OD起始点标号，edges是路段起始点标号
+####该函数借用networkx工具包生成路径并标号
+####进而生成link-path关系矩阵与path-OD关系矩阵
+
+def incidence_matrix_generation(edges,ODs):
     import networkx as nx
     #表示有向图
     G=nx.DiGraph()
